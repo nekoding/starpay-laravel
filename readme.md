@@ -31,10 +31,10 @@ $parameters = array(
 );
 
 # PC version : it will redirect to star-pay page PC version
-StarpayLaravel::build($parameters)->send();
+return StarpayLaravel::build($parameters)->send();
 
 # Mobile version : it will redirect to star-pay page Mobile version
-StarpayLaravel::build($parameters)->mobile()->send();
+return StarpayLaravel::build($parameters)->mobile()->send();
 ```
 
 ## Change log
