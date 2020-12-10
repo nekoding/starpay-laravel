@@ -18,10 +18,10 @@ abstract class SetupConfiguration implements PCRequest, MobileRequest
     public function __construct()
     {
         if (config('starpay-laravel.starpay.isProduction')) {
-            $this->url = self::URL_PRODUCTION;
+            return $this->url = self::URL_PRODUCTION;
         }
 
-        $this->url = self::URL_DEVELOPMENT;
+        return $this->url = self::URL_DEVELOPMENT;
     }
 
     /**
