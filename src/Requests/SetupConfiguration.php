@@ -7,9 +7,8 @@ use Nekoding\StarpayLaravel\Contracts\PCRequest;
 
 abstract class SetupConfiguration implements PCRequest, MobileRequest
 {
-
-    const URL_PRODUCTION = "https://pay.star-pay.jp";
-    const URL_DEVELOPMENT = "https://pay2.star-pay.jp";
+    const URL_PRODUCTION = 'https://pay.star-pay.jp';
+    const URL_DEVELOPMENT = 'https://pay2.star-pay.jp';
 
     protected $url;
 
@@ -28,17 +27,17 @@ abstract class SetupConfiguration implements PCRequest, MobileRequest
     /**
      * @return string
      */
-    protected abstract function getMobileEndpoint(): string;
+    abstract protected function getMobileEndpoint(): string;
 
     /**
      * @return string
      */
-    protected abstract function getPCEndpoint(): string;
+    abstract protected function getPCEndpoint(): string;
 
     /**
      * @return mixed
      */
-    protected abstract function buildUp();
+    abstract protected function buildUp();
 
     /**
      * @return array
@@ -46,6 +45,7 @@ abstract class SetupConfiguration implements PCRequest, MobileRequest
     protected function setClientIp(): array
     {
         $clientip = config('starpay-laravel.starpay.clientip');
+
         return compact('clientip');
     }
 }
