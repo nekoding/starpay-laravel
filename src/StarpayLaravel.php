@@ -12,42 +12,65 @@ class StarpayLaravel extends SetupConfiguration
     protected $final_payload;
     protected $final_endpoint = null;
 
+    /**
+     * @param $payload
+     * @return static
+     */
     public static function build($payload): self
     {
         return new static($payload);
     }
 
+    /**
+     * StarpayLaravel constructor.
+     * @param array|null $payload
+     */
     public function __construct(array $payload = null)
     {
         parent::__construct();
 
         if (is_array($payload)) {
-            static::$payload = http_build_query($payload);
+            static::$payload = http_build_query(array_merge($this->setClientIp(), $payload));
         }
     }
 
+    /**
+     * @return string
+     */
     public function getMobileEndpoint(): string
     {
         return $this->url . parent::MOBILE_ENDPOINT;
     }
 
+    /**
+     * @return string
+     */
     public function getPCEndpoint(): string
     {
         return $this->url . parent::PC_ENDPOINT;
     }
 
+    /**
+     * @return mixed
+     */
     public function buildUp()
     {
         $url_endpoint = $this->final_endpoint ?? $this->getPCEndpoint();
         $this->final_payload = $url_endpoint . "?" . static::$payload;
     }
 
-    public function mobile()
+    /**
+     * @return $this
+     */
+    public function mobile(): self
     {
         $this->final_endpoint = $this->getMobileEndpoint();
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function send()
     {
         $this->buildUp();

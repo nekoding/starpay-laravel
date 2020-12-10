@@ -17,15 +17,29 @@ $ composer require nekoding/starpay-laravel
 
 ## Usage
 
+```php
+use Nekoding\StarpayLaravel\StarpayLaravel;
+
+# required parameters : sendid, money
+# optional parameters : email, sendpoint, username
+$parameters = array(
+    "email"     => "johndoe@mail.com",
+    "sendid"    => "xxxx",
+    "sendpoint" => "xxxx",
+    "money"     => 100,
+    "username"  => "xxxx"
+);
+
+# PC version : it will redirect to star-pay page PC version
+return StarpayLaravel::build($parameters)->send();
+
+# Mobile version : it will redirect to star-pay page Mobile version
+return StarpayLaravel::build($parameters)->mobile()->send();
+```
+
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
-```
 
 ## Contributing
 

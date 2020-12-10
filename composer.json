@@ -40,8 +40,5 @@
                 "StarpayLaravel": "Nekoding\\StarpayLaravel\\Facades\\StarpayLaravel"
             }
         }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit --no-coverage"
     }
 }
