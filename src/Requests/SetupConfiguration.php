@@ -13,6 +13,9 @@ abstract class SetupConfiguration implements PCRequest, MobileRequest
 
     protected $url;
 
+    /**
+     * SetupConfiguration constructor.
+     */
     public function __construct()
     {
         if (config('starpay-laravel.starpay.isProduction')) {
@@ -22,9 +25,27 @@ abstract class SetupConfiguration implements PCRequest, MobileRequest
         $this->url = self::URL_DEVELOPMENT;
     }
 
+    /**
+     * @return string
+     */
     protected abstract function getMobileEndpoint(): string;
 
+    /**
+     * @return string
+     */
     protected abstract function getPCEndpoint(): string;
 
+    /**
+     * @return mixed
+     */
     protected abstract function buildUp();
+
+    /**
+     * @return array
+     */
+    protected function setClientIp(): array
+    {
+        $clientip = config('starpay-laravel.starpay.clientip');
+        return compact('clientip');
+    }
 }
