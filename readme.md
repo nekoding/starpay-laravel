@@ -61,11 +61,11 @@ MIT. Please see the [license file](license.md) for more information.
 [ico-version]: https://img.shields.io/packagist/v/nekoding/starpay-laravel.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/nekoding/starpay-laravel.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/nekoding/starpay-laravel/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
+[ico-styleci]: https://github.styleci.io/repos/320182361/shield
 
 [link-packagist]: https://packagist.org/packages/nekoding/starpay-laravel
 [link-downloads]: https://packagist.org/packages/nekoding/starpay-laravel
 [link-travis]: https://travis-ci.org/nekoding/starpay-laravel
-[link-styleci]: https://styleci.io/repos/12345678
+[link-styleci]: https://github.styleci.io/repos/320182361
 [link-author]: https://github.com/nekoding
 [link-contributors]: ../../contributors
