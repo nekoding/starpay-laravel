@@ -14,7 +14,7 @@ class ExampleTest extends TestCase
 
     public function test_it_can_get_config(): void
     {
-        $configuration = config("starpay-laravel.starpay");
+        $configuration = config('starpay-laravel.starpay');
         $this->assertEquals(null, $configuration['clientip']);
         $this->assertFalse($configuration['isProduction']);
     }

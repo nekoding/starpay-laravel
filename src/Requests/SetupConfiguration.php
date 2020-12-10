@@ -7,9 +7,8 @@ use Nekoding\StarpayLaravel\Contracts\PCRequest;
 
 abstract class SetupConfiguration implements PCRequest, MobileRequest
 {
-
-    const URL_PRODUCTION = "https://pay.star-pay.jp";
-    const URL_DEVELOPMENT = "https://pay2.star-pay.jp";
+    const URL_PRODUCTION = 'https://pay.star-pay.jp';
+    const URL_DEVELOPMENT = 'https://pay2.star-pay.jp';
 
     protected $url;
 
@@ -22,9 +21,9 @@ abstract class SetupConfiguration implements PCRequest, MobileRequest
         $this->url = self::URL_DEVELOPMENT;
     }
 
-    protected abstract function getMobileEndpoint(): string;
+    abstract protected function getMobileEndpoint(): string;
 
-    protected abstract function getPCEndpoint(): string;
+    abstract protected function getPCEndpoint(): string;
 
-    protected abstract function buildUp();
+    abstract protected function buildUp();
 }
