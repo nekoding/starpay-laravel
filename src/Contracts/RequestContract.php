@@ -7,5 +7,5 @@ interface RequestContract
     /**
      * @return mixed
      */
-    public function send();
+    public function redirect();
 }
