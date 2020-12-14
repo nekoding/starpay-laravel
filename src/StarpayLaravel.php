@@ -38,7 +38,7 @@ class StarpayLaravel extends SetupConfiguration
      */
     public function getMobileEndpoint(): string
     {
-        return $this->url . parent::MOBILE_ENDPOINT;
+        return $this->url.parent::MOBILE_ENDPOINT;
     }
 
     /**
@@ -46,7 +46,7 @@ class StarpayLaravel extends SetupConfiguration
      */
     public function getPCEndpoint(): string
     {
-        return $this->url . parent::PC_ENDPOINT;
+        return $this->url.parent::PC_ENDPOINT;
     }
 
     /**
@@ -55,7 +55,7 @@ class StarpayLaravel extends SetupConfiguration
     public function buildUp()
     {
         $url_endpoint = $this->final_endpoint ?? $this->getPCEndpoint();
-        $this->final_payload = $url_endpoint . '?' . static::$payload;
+        $this->final_payload = $url_endpoint.'?'.static::$payload;
     }
 
     /**
